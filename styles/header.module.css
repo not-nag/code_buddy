@@ -1,0 +1,52 @@
+@media only screen and (max-width: 600px) {
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .people {
+        margin-left: 10px;
+        border: 1px solid red;
+        height: 80px;
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: black;
+    }
+    
+    .logo {
+        position: relative;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    }
+    
+    .people {
+        border: 1px solid red;
+        height: 80px;
+        width: 150px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+
