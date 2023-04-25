@@ -5,13 +5,16 @@ export default function Code() {
     <>
       <div className={styles.edit}>
         <div className={styles.edit_child}>
-          <div className={styles.heading}></div>
+          <div className={styles.heading}>HTML</div>
+          <textarea className={styles.textarea}></textarea>
         </div>
         <div className={styles.edit_child}>
-          <div className={styles.heading}></div>
+          <div className={styles.heading}>CSS</div>
+          <textarea className={styles.textarea}></textarea>
         </div>
         <div className={styles.edit_child}>
-          <div className={styles.heading}></div>
+          <div className={styles.heading}>JavaScript</div>
+          <textarea className={styles.textarea}></textarea>
         </div>
       </div>
       <div className={styles.iframe}>
