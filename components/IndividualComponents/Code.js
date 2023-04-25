@@ -17,6 +17,7 @@ export default function Code() {
       <div className={styles.iframe}>
         <div className={styles.iframe_heading}>OUTPUT</div>
         <iframe
+          title="output"
           frameborder="0"
           sandbox="allow-scripts"
           width="100%"

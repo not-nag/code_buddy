@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .edit_child{
     height: 350px;
@@ -28,10 +29,9 @@
 
 .iframe{
     height: 100vh;
-    border: 2px solid white;
-    margin: 10px 10px 0 10px;
+    border: 3px solid black;
     background-color: white;
-    border-bottom: 5px solid black;
+    margin: 5px;
 }
 
 .iframe_heading{
@@ -42,5 +42,5 @@
     font-size: 25px;
     font-weight: 700;
     font-family: 'Courier New', Courier, monospace;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }

@@ -16,9 +16,9 @@
     }
 
     .people {
-        margin-left: 10px;
+        margin-right: 10px;
         border: 1px solid red;
-        height: 80px;
+        height: 75px;
         width: 150px;
     }
 }
@@ -41,11 +41,12 @@
     }
     
     .people {
+        margin-right: 5px;
         border: 1px solid red;
         height: 80px;
         width: 150px;
         position: absolute;
-        right: 0px;
+        right: 5px;
         top: 0px;
     }
 }
