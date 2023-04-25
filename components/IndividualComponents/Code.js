@@ -14,7 +14,15 @@ export default function Code() {
           <div className={styles.heading}></div>
         </div>
       </div>
-      <div className={styles.output}>I display output</div>
+      <div className={styles.iframe}>
+        <div className={styles.iframe_heading}>OUTPUT</div>
+        <iframe
+          frameborder="0"
+          sandbox="allow-scripts"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
     </>
   );
 }

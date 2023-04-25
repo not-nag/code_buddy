@@ -1,5 +1,6 @@
-import Editor from "@/components/Editor";
+import Dev from "@/components/Dev";
 import { useRouter } from "next/router";
+
 
 export default function IDE() {
   const router = useRouter();
@@ -8,7 +9,7 @@ export default function IDE() {
   //
   return (
     <>
-      <Editor></Editor>
+      <Dev></Dev>
     </>
   );
 }
