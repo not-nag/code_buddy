@@ -38,7 +38,7 @@ function TextareaWithLineNumbers(props) {
       const input = e.target;
       const start = input.selectionStart;
       const end = input.selectionEnd;
-      const text = "   "; // Insert 4 spaces
+      const text = "   "; // Insert 3 spaces
       input.value =
         input.value.substring(0, start) + text + input.value.substring(end);
       input.selectionStart = input.selectionEnd = start + text.length;
@@ -79,6 +79,7 @@ function TextareaWithLineNumbers(props) {
         }}
       />
       <textarea
+        spellCheck={false}
         onKeyDown={handleTab}
         className={styles.textarea}
         ref={editorRef}

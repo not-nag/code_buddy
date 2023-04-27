@@ -1,6 +1,6 @@
 import styles from "../../styles/code.module.css";
 import TextareaWithLineNumbers from "./TextAreaWithLine";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import DataContext from "../Context/context";
 export default function Code() {
   const [html, setHtml] = useState("");
