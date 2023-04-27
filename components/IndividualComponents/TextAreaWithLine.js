@@ -1,7 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import styles from "../../styles/code.module.css";
+import DataContext from "../Context/context";
 
-function TextareaWithLineNumbers() {
+function TextareaWithLineNumbers(props) {
+  const val = useContext(DataContext);
+  const name = props.name;
+
   const [value, setValue] = useState("");
   const editorRef = useRef(null);
   const lineNumbersRef = useRef(null);
@@ -19,6 +23,26 @@ function TextareaWithLineNumbers() {
 
   function handleChange(event) {
     setValue(event.target.value);
+    if (name == "html") {
+      val.setHtml(event.target.value);
+    } else if (name == "css") {
+      val.setCss(event.target.value);
+    } else if (name == "js") {
+      val.setJs(event.target.value);
+    }
+  }
+  function handleTab(e) {
+    if (e.keyCode === 9) {
+      // Tab key code is 9
+      e.preventDefault(); // Prevent default behavior of moving to next element
+      const input = e.target;
+      const start = input.selectionStart;
+      const end = input.selectionEnd;
+      const text = "   "; // Insert 4 spaces
+      input.value =
+        input.value.substring(0, start) + text + input.value.substring(end);
+      input.selectionStart = input.selectionEnd = start + text.length;
+    }
   }
 
   useEffect(() => {
@@ -55,6 +79,7 @@ function TextareaWithLineNumbers() {
         }}
       />
       <textarea
+        onKeyDown={handleTab}
         className={styles.textarea}
         ref={editorRef}
         value={value}
