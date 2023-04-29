@@ -36,7 +36,7 @@ export default function Code() {
         <iframe
           srcDoc={srcDoc}
           title="output"
-          frameborder="0"
+          frameBorder="0"
           sandbox="allow-scripts"
           width="100%"
           height="100%"
