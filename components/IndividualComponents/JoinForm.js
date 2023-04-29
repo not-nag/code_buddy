@@ -11,7 +11,7 @@ export default function JoinForm() {
 
   return (
     <div className={styles.form_parent}>
-      <h1 className={styles.h1}>Enter the details to join a room</h1>
+      <h1 className={styles.h1}>Enter the details to join a Room</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <p className={styles.p}>Enter the Room ID</p>
         <input
