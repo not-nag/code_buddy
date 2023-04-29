@@ -5,8 +5,8 @@
         font-size: 40px;
         text-align: center;
         padding: 0;
-        margin: 0;
-        padding-top: 2%;
+        margin: 0;   
+        padding-top: 20px; 
     }
 
     .a {
@@ -48,9 +48,8 @@
             font-size: 50px;
             text-align: center;
             padding: 0;
-            margin: 0;
-            padding-top: 3%;
-        }
+            margin: 0;  
+            padding-top: 30px;     }
     
         .a {
             background: linear-gradient(to right, #7928CA, #FF0080);
@@ -87,12 +86,12 @@
 
 @media only screen and (min-width: 700px){
     .h1 {
+            margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
             font-size: 70px;
             text-align: center;
-            padding: 0;
-            margin: 0;
-            padding-top: 3%;
+            padding: 0;   
+            padding-top: 50px;
         }
     
         .a {
