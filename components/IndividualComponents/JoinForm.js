@@ -38,7 +38,11 @@ export default function JoinForm() {
           Join Room
         </button>
       </form>
-      <h1 className={styles.h1}>OR</h1>
+      <div className={styles.leftright}>
+        <div className={styles.leftline}></div>
+        <h1 className={styles.h1}>OR</h1>
+        <div className={styles.rightline}></div>
+      </div>
       <button className={styles.create_button}>
         Click here to create a Room
       </button>

@@ -80,6 +80,28 @@
     padding: 2px 10px;
 }
 
+.leftright{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.leftline{
+    width: 20%;
+    height: 3px;
+    background-color: white;
+    margin: 10px;
+}
+
+.rightline{
+    width: 20%;
+    height: 3px;
+    background-color: white;
+    margin: 10px;
+}
+
 
 @media only screen and (max-width: 450px) {
     .form_parent {
