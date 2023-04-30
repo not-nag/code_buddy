@@ -1,17 +1,20 @@
 import { useState } from "react";
 import styles from "../../styles/join_form.module.css";
 import { useRouter } from "next/router";
+import LoadingScreen from "./LoadingScreen";
 
 export default function JoinForm() {
   const router = useRouter();
   const [roomId, setRoomId] = useState("");
   const [roomPassword, setRoomPassword] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
   async function handleClick() {
+    setLoading(true);
     const response = await fetch("/api/create-room", {
       method: "POST",
     });
@@ -19,10 +22,13 @@ export default function JoinForm() {
     if (response.ok) {
       const data = await response.json();
       router.push(`/${data.roomId}`);
+      setLoading(false);
     } else {
       console.log("Failed to create room");
     }
   }
+
+  if (isLoading) return <LoadingScreen></LoadingScreen>;
 
   return (
     <div className={styles.form_parent}>
