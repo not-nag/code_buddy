@@ -4,14 +4,16 @@ import { useEffect, useContext } from "react";
 import { UserContext } from "./Context/UserAuth";
 
 export default function Dev() {
-  const { setUser } = useContext(UserContext);
+  const { setUser, setDisplayId, setDisplayPass } = useContext(UserContext);
   useEffect(() => {
     window.onpopstate = () => {
       setUser(false);
+      setDisplayId("");
     };
 
     window.onbeforeunload = () => {
       setUser(false);
+      setDisplayPass("");
     };
   });
 

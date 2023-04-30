@@ -13,8 +13,30 @@ export default function JoinForm() {
   const [roomPassword, setRoomPassword] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+    const response = await fetch("/api/join-room", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        roomId,
+        roomPassword,
+      }),
+    });
+    if (response.ok) {
+      setDisplayId(roomId);
+      setDisplayPass(roomPassword);
+      setUser(true);
+      setLoading(false);
+      router.push(`/${roomId}`);
+    } else {
+      window.alert("Invalid Room ID or Password");
+      setLoading(false);
+      router.push("/");
+    }
   };
 
   async function handleClick() {
