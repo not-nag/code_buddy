@@ -17,7 +17,10 @@ export default function Header() {
         ></Image>
       </Link>
       {router.pathname === "/[room_id]" ? (
-        <div className={styles.people}></div>
+        <div className={styles.people}>
+          <p className={styles.roomid}>ID : AWERTY</p>
+          <p className={styles.roompass}>Password : AWERTH</p>
+        </div>
       ) : null}
     </div>
   );

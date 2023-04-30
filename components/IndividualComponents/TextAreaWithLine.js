@@ -1,8 +1,13 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import styles from "../../styles/code.module.css";
 import DataContext from "../Context/context";
+import { UserContext } from "../Context/UserAuth";
+import { useRouter } from "next/router";
 
 function TextareaWithLineNumbers(props) {
+  const router = useRouter();
+  const { user, setUser } = useContext(UserContext);
+
   const val = useContext(DataContext);
   const name = props.name;
 
@@ -47,7 +52,10 @@ function TextareaWithLineNumbers(props) {
 
   useEffect(() => {
     updateLineNumbers();
-  }, [value]);
+    if (!user) {
+      router.push("/");
+    }
+  }, [value, user]);
 
   return (
     <div

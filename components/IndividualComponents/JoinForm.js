@@ -2,8 +2,12 @@ import { useState } from "react";
 import styles from "../../styles/join_form.module.css";
 import { useRouter } from "next/router";
 import LoadingScreen from "./LoadingScreen";
+import { useContext } from "react";
+import { UserContext } from "../Context/UserAuth";
 
 export default function JoinForm() {
+  const { user, setUser } = useContext(UserContext);
+
   const router = useRouter();
   const [roomId, setRoomId] = useState("");
   const [roomPassword, setRoomPassword] = useState("");
@@ -22,6 +26,7 @@ export default function JoinForm() {
     if (response.ok) {
       const data = await response.json();
       router.push(`/${data.roomId}`);
+      setUser(true);
       setLoading(false);
     } else {
       console.log("Failed to create room");
