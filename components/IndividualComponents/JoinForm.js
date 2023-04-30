@@ -1,13 +1,28 @@
 import { useState } from "react";
 import styles from "../../styles/join_form.module.css";
+import { useRouter } from "next/router";
 
 export default function JoinForm() {
+  const router = useRouter();
   const [roomId, setRoomId] = useState("");
   const [roomPassword, setRoomPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
+  async function handleClick() {
+    const response = await fetch("/api/create-room", {
+      method: "POST",
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      router.push(`/${data.roomId}`);
+    } else {
+      console.log("Failed to create room");
+    }
+  }
 
   return (
     <div className={styles.form_parent}>
@@ -43,7 +58,7 @@ export default function JoinForm() {
         <h1 className={styles.h1}>OR</h1>
         <div className={styles.rightline}></div>
       </div>
-      <button className={styles.create_button}>
+      <button onClick={handleClick} className={styles.create_button}>
         Click here to create a Room
       </button>
     </div>
