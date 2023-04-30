@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { UserContext } from "../Context/UserAuth";
 
 export default function JoinForm() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser, setDisplayId, setDisplayPass } = useContext(UserContext);
 
   const router = useRouter();
   const [roomId, setRoomId] = useState("");
@@ -25,6 +25,8 @@ export default function JoinForm() {
 
     if (response.ok) {
       const data = await response.json();
+      setDisplayId(data.roomId);
+      setDisplayPass(data.password);
       router.push(`/${data.roomId}`);
       setUser(true);
       setLoading(false);

@@ -2,8 +2,12 @@ import styles from "../../styles/header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { UserContext } from "../Context/UserAuth";
 
 export default function Header() {
+  const { displayId, displayPass } = useContext(UserContext);
+
   const router = useRouter();
   return (
     <div className={styles.header}>
@@ -18,8 +22,8 @@ export default function Header() {
       </Link>
       {router.pathname === "/[room_id]" ? (
         <div className={styles.people}>
-          <p className={styles.roomid}>ID : AWERTY</p>
-          <p className={styles.roompass}>Password : AWERTH</p>
+          <p className={styles.roomid}>ID : {displayId}</p>
+          <p className={styles.roompass}>Password : {displayPass}</p>
         </div>
       ) : null}
     </div>
