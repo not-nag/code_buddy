@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import LoadingScreen from "./LoadingScreen";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserAuth";
+import socket from "@/utils/socket";
 
 export default function JoinForm() {
   const { setUser, setDisplayId, setDisplayPass } = useContext(UserContext);
@@ -29,6 +30,7 @@ export default function JoinForm() {
     if (response.ok) {
       setDisplayId(roomId);
       setDisplayPass(roomPassword);
+      socket.emit("join", roomId);
       setUser(true);
       setLoading(false);
       router.push(`/${roomId}`);
@@ -49,6 +51,7 @@ export default function JoinForm() {
       const data = await response.json();
       setDisplayId(data.roomId);
       setDisplayPass(data.password);
+      socket.emit("join", data.roomId);
       router.push(`/${data.roomId}`);
       setUser(true);
       setLoading(false);

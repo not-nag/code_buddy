@@ -3,10 +3,11 @@ import styles from "../../styles/code.module.css";
 import DataContext from "../Context/context";
 import { UserContext } from "../Context/UserAuth";
 import { useRouter } from "next/router";
+import socket from "@/utils/socket";
 
 function TextareaWithLineNumbers(props) {
   const router = useRouter();
-  const { user, setUser } = useContext(UserContext);
+  const { user, displayId } = useContext(UserContext);
 
   const val = useContext(DataContext);
   const name = props.name;
@@ -30,10 +31,13 @@ function TextareaWithLineNumbers(props) {
     setValue(event.target.value);
     if (name == "html") {
       val.setHtml(event.target.value);
+      socket.emit("html", displayId, value);
     } else if (name == "css") {
       val.setCss(event.target.value);
+      socket.emit("css", displayId, value);
     } else if (name == "js") {
       val.setJs(event.target.value);
+      socket.emit("js", displayId, value);
     }
   }
   function handleTab(e) {
@@ -56,6 +60,10 @@ function TextareaWithLineNumbers(props) {
       router.push("/");
     }
   }, [value, user]);
+
+  useEffect(() => {
+    setValue(props.lang.toString());
+  });
 
   return (
     <div
