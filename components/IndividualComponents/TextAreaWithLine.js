@@ -4,7 +4,6 @@ import DataContext from "../Context/context";
 import { UserContext } from "../Context/UserAuth";
 import { useRouter } from "next/router";
 import socket from "@/utils/socket";
-import axios from "axios";
 
 function TextareaWithLineNumbers(props) {
   const router = useRouter();

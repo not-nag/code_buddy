@@ -1,7 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const MONGO_URI =
-  "mongodb+srv://notnag:onionandcarrot@cluster0.9mdc9oz.mongodb.net/code-buddy?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI;
 
 export default async function handler(req, res) {
   const { roomId, roomPassword } = req.body;
