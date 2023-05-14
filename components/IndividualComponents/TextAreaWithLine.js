@@ -37,7 +37,7 @@ function TextareaWithLineNumbers(props) {
       socket.emit("css", displayId, event.target.value);
     } else if (name == "js") {
       val.setJs(event.target.value);
-      socket.emit("js", displayId, evtn.target.value);
+      socket.emit("js", displayId, event.target.value);
     }
   }
   function handleTab(e) {
