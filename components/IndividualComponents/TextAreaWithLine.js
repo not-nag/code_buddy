@@ -31,13 +31,13 @@ function TextareaWithLineNumbers(props) {
     setValue(event.target.value);
     if (name == "html") {
       val.setHtml(event.target.value);
-      socket.emit("html", displayId, value);
+      socket.emit("html", displayId, event.target.value);
     } else if (name == "css") {
       val.setCss(event.target.value);
-      socket.emit("css", displayId, value);
+      socket.emit("css", displayId, event.target.value);
     } else if (name == "js") {
       val.setJs(event.target.value);
-      socket.emit("js", displayId, value);
+      socket.emit("js", displayId, evtn.target.value);
     }
   }
   function handleTab(e) {
