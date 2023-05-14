@@ -1,32 +1,54 @@
 import styles from "../../styles/code.module.css";
 import TextareaWithLineNumbers from "./TextAreaWithLine";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import DataContext from "../Context/context";
 import socket from "@/utils/socket";
+import { UserContext } from "../Context/UserAuth";
+import axios from "axios";
+
 export default function Code() {
+  var h = "";
+  var c = "";
+  var j = "";
+  const { displayId } = useContext(UserContext);
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
-  const [updateHtml, setUpdateHtml] = useState("");
-  const [updateCss, setUpdateCss] = useState("");
-  const [updateJs, setUpdateJs] = useState("");
 
   useEffect(() => {
+    async function refresh() {
+      try {
+        const response = await axios.get(`http://localhost:3001/${displayId}`);
+        if (response.data.obj1) {
+          h = response.data.obj1.toString();
+        }
+        if (response.data.obj2) {
+          c = response.data.obj2.toString();
+        }
+        if (response.data.obj3) {
+          j = response.data.obj3.toString();
+        }
+        setHtml(h);
+        setCss(c);
+        setJs(j);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    refresh();
+
     socket.on("html", (value) => {
       setHtml(value);
-      setUpdateHtml(value);
     });
 
     socket.on("css", (value) => {
       setCss(value);
-      setUpdateCss(value);
     });
 
     socket.on("js", (value) => {
       setJs(value);
-      setUpdateJs(value);
     });
-  }, [updateCss, updateHtml, updateJs]);
+  }, []);
 
   const srcDoc = `
     <html>
