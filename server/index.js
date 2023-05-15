@@ -46,15 +46,10 @@ io.on("connection", (socket) => {
 
 app.get("/:displayId", (req, res) => {
   const id = req.params.displayId;
-  console.log(id);
   const obj1 = htmlData[id];
-  console.log(obj1);
   const obj2 = cssData[id];
-  console.log(obj2);
   const obj3 = jsData[id];
-  console.log(obj3);
   const responseData = { obj1, obj2, obj3 };
-  console.log(responseData);
   res.json(responseData);
 });
 
