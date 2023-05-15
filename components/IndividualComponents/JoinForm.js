@@ -28,11 +28,11 @@ export default function JoinForm() {
       }),
     });
     if (response.ok) {
+      setLoading(false);
       setDisplayId(roomId);
       setDisplayPass(roomPassword);
       socket.emit("join", roomId);
       setUser(true);
-      setLoading(false);
       router.push(`/${roomId}`);
     } else {
       window.alert("Invalid Room ID or Password");
@@ -48,13 +48,13 @@ export default function JoinForm() {
     });
 
     if (response.ok) {
+      setLoading(false);
       const data = await response.json();
       setDisplayId(data.roomId);
       setDisplayPass(data.password);
       socket.emit("join", data.roomId);
       router.push(`/${data.roomId}`);
       setUser(true);
-      setLoading(false);
     } else {
       console.log("Failed to create room");
     }
