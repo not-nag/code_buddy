@@ -1,22 +1,8 @@
 <h1 align="center">Collaborative Real-Time Socket.io Code Editor</h1>
 
 <p align="center">
-  <img src="project-screenshot.png" alt="Project Screenshot">
-</p>
-
-<p align="center">
   <em>A collaborative real-time code editor built with Next.js, Node.js, Socket.io, HTML, CSS, and JavaScript.</em>
 </p>
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -26,18 +12,43 @@ This project is a collaborative real-time code editor that allows multiple users
 
 - Real-time collaboration: Multiple users can edit code together in real time.
 - Room system: Users can create or join rooms to collaborate with others.
-- Syntax highlighting: Code is displayed with syntax highlighting for popular programming languages.
-- User cursors: User cursors are displayed to show each participant's editing position.
-- Chat functionality: Users can communicate through a chat interface within each room.
 - Responsive design: The application is optimized for different screen sizes.
+
+## Usage
+-Create a new room by providing a unique room name.
+-Share the room URL with others to invite them to collaborate.
+-Start editing code in the shared code editor.
+-Changes made by any participant will be instantly reflected in the editor for others.
 
 ## Demo
 
-[Live Demo](https://your-demo-link.com)
+[Live Demo]()
 
 ## Installation
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/project.git
+   ```bash git clone https://github.com/not-nag/code_buddy.git```
+
+2. Navigate to the server directory:
+   ```bash cd server```
+   
+3. Install the dependencies:
+   ```bash npm install```
+
+4. Navigate to the frontend directory present in the root:
+   ```bash cd frontend```
+
+5. Install the dependencies:
+   ```bash npm install```
+   
+6. Configure the environment variables:
+   Create a .env file in the root directory.
+   Provide the necessary environment variables (MONGO_URI).
+   
+ 7. Set the PORT:
+    By default server runs on 3001 and frontend runs on 3000
+ 
+ 8. Start the development server:
+    ```bash npm run dev```
+ 9. Open your browser and visit http://localhost:3000.
