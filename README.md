@@ -28,19 +28,24 @@ This project is a collaborative real-time code editor that allows multiple users
 
 1. Clone the repository:
 
-   ```bash git clone https://github.com/not-nag/code_buddy.git```
+   ```bash
+   git clone https://github.com/not-nag/code_buddy.git
 
 2. Navigate to the server directory:
-   ```bash cd server```
+   ```bash
+   cd server
    
 3. Install the dependencies:
-   ```bash npm install```
+   ```
+   bash npm install
 
 4. Navigate to the frontend directory present in the root:
-   ```bash cd frontend```
+   ```bash
+   cd frontend
 
 5. Install the dependencies:
-   ```bash npm install```
+   ```bash
+   npm install
    
 6. Configure the environment variables:
    Create a .env file in the root directory.
@@ -50,5 +55,10 @@ This project is a collaborative real-time code editor that allows multiple users
     By default server runs on 3001 and frontend runs on 3000
  
  8. Start the development server:
-    ```bash npm run dev```
+    ```bash
+    npm run dev
  9. Open your browser and visit http://localhost:3000.
+
+## Bugs found:
+Minor
+1. On creating or joining a room, the window for a moment snaps back to the page that it was already in and then moves to router.push(...).
