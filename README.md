@@ -36,8 +36,8 @@ This project is a collaborative real-time code editor that allows multiple users
    cd server
    
 3. Install the dependencies:
-   ```
-   bash npm install
+   ```bash
+   npm install
 
 4. Navigate to the frontend directory present in the root:
    ```bash
