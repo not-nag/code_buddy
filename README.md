@@ -15,10 +15,10 @@ This project is a collaborative real-time code editor that allows multiple users
 - Responsive design: The application is optimized for different screen sizes.
 
 ## Usage
--Create a new room by providing a unique room name.
--Share the room URL with others to invite them to collaborate.
--Start editing code in the shared code editor.
--Changes made by any participant will be instantly reflected in the editor for others.
+- Create a new room by providing a unique room name.
+- Share the room URL with others to invite them to collaborate.
+- Start editing code in the shared code editor.
+- Changes made by any participant will be instantly reflected in the editor for others.
 
 ## Demo
 
